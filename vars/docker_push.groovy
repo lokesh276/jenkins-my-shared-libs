@@ -7,7 +7,7 @@ def call(String credId, String, imageName){
                     )
                 ]) {
                     sh "docker login -u ${dockerUser} -p ${dockerPass}"
-                    sh "docker tag "${imageName}" ${dockerUser}/${imageName}"
+                    sh "docker tag ${imageName} ${dockerUser}/${imageName}"
                     sh "docker push ${dockerUser}/${imageName}"
                 }
             }
